@@ -45,9 +45,7 @@ public:
     virtual void changeState(int stateType);
 
 
-    State *finalState;
-    State *m_pCurState;
-    int m_stateIndex;
+    //State *finalState;
 
     
 signals:
@@ -55,6 +53,9 @@ signals:
 public slots:
 private:
     State **m_ppStateHead;
+    State *m_pCurState;
+    int m_stateIndex;
+
     
 };
 

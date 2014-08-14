@@ -25,6 +25,7 @@ int Fsm::msgProc(MESSAGE *pMsg, int *userId)
 {
     int rc = m_pCurState->msgProc(this,pMsg,userId);
     m_pCurState->stateProc(m_stateIndex);
+    return rc;
 }
 
 
@@ -57,7 +58,7 @@ int State::msgProc(Fsm *pCtrl, MESSAGE *pMsg, int *userId)
 int State::handleMsg(unsigned int message, long wParam, long lParam, int *pUser)
 {
     // I am confuse where pActiveState free?
-    State *pActiveState = ((Fsm *)wParam)->getCurState();
+  //  State *pActiveState = ((Fsm *)wParam)->getCurState();
     return FSM::HANDLE_NO_END;
 }
 
